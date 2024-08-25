@@ -12,17 +12,14 @@ import {
     Stack,
     Text,
 } from '@chakra-ui/react';
-import {Formik, Form, useField} from "formik";
+import { Formik, Form, useField } from "formik";
 import * as Yup from 'yup';
-import {useAuth} from "../context/AuthContext.jsx";
-import {errorNotification} from "../../services/notification.js";
-import {useNavigate} from "react-router-dom";
-import {useEffect} from "react";
+import { useAuth } from "../context/AuthContext.jsx";
+import { errorNotification } from "../../services/notification.js";
+import { useNavigate, Link as RouterLink } from "react-router-dom";
+import { useEffect } from "react";
 
-const MyTextInput = ({label, ...props}) => {
-    // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
-    // which we can spread on <input>. We can use field meta to show an error
-    // message if the field is invalid and it has been touched (i.e. visited)
+const MyTextInput = ({ label, ...props }) => {
     const [field, meta] = useField(props);
     return (
         <Box>
@@ -30,7 +27,7 @@ const MyTextInput = ({label, ...props}) => {
             <Input className="text-input" {...field} {...props} />
             {meta.touched && meta.error ? (
                 <Alert className="error" status={"error"} mt={2}>
-                    <AlertIcon/>
+                    <AlertIcon />
                     {meta.error}
                 </Alert>
             ) : null}
@@ -55,8 +52,8 @@ const LoginForm = () => {
                         .required("Password is required")
                 })
             }
-            initialValues={{username: '', password: ''}}
-            onSubmit={(values, {setSubmitting}) => {
+            initialValues={{ username: '', password: '' }}
+            onSubmit={(values, { setSubmitting }) => {
                 setSubmitting(true);
                 login(values).then(res => {
                     navigate("/dashboard")
@@ -71,14 +68,14 @@ const LoginForm = () => {
                 })
             }}>
 
-            {({isValid, isSubmitting}) => (
+            {({ isValid, isSubmitting }) => (
                 <Form>
                     <Stack mt={15} spacing={15}>
                         <MyTextInput
                             label={"Email"}
                             name={"username"}
                             type={"email"}
-                            placeholder={"hello@amigoscode.com"}
+                            placeholder={"hello@customerhub.com"}
                         />
                         <MyTextInput
                             label={"Password"}
@@ -112,18 +109,18 @@ const Login = () => {
     })
 
     return (
-        <Stack minH={'100vh'} direction={{base: 'column', md: 'row'}}>
+        <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
             <Flex p={8} flex={1} alignItems={'center'} justifyContent={'center'}>
                 <Stack spacing={4} w={'full'} maxW={'md'}>
                     <Image
-                        src={"https://user-images.githubusercontent.com/40702606/210880158-e7d698c2-b19a-4057-b415-09f48a746753.png"}
+                        src={"https://static.vecteezy.com/system/resources/previews/021/340/782/non_2x/customer-icon-for-your-website-design-logo-app-ui-free-vector.jpg"}
                         boxSize={"200px"}
                         alt={"Amigoscode Logo"}
                         alignSelf={"center"}
                     />
                     <Heading fontSize={'2xl'} mb={15}>Sign in to your account</Heading>
-                    <LoginForm/>
-                    <Link color={"blue.500"} href={"/signup"}>
+                    <LoginForm />
+                    <Link as={RouterLink} color={"blue.500"} to={"/signup"}>
                         Dont have an account? Signup now.
                     </Link>
                 </Stack>
@@ -134,10 +131,10 @@ const Login = () => {
                 flexDirection={"column"}
                 alignItems={"center"}
                 justifyContent={"center"}
-                bgGradient={{sm: 'linear(to-r, blue.600, purple.600)'}}
+                bgGradient={{ sm: 'linear(to-r, blue.600, purple.600)' }}
             >
                 <Text fontSize={"6xl"} color={'white'} fontWeight={"bold"} mb={5}>
-                    <Link target={"_blank"} href={"https://amigoscode.com/courses"}>
+                    <Link as={RouterLink} to={"/signup"} color="white">
                         Enrol Now
                     </Link>
                 </Text>

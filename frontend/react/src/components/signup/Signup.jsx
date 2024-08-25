@@ -19,7 +19,7 @@ const Signup = () => {
             <Flex p={8} flex={1} alignItems={'center'} justifyContent={'center'}>
                 <Stack spacing={4} w={'full'} maxW={'md'}>
                     <Image
-                        src={"https://user-images.githubusercontent.com/40702606/210880158-e7d698c2-b19a-4057-b415-09f48a746753.png"}
+                        src={"https://static.vecteezy.com/system/resources/previews/021/340/782/non_2x/customer-icon-for-your-website-design-logo-app-ui-free-vector.jpg"}
                         boxSize={"200px"}
                         alt={"Amigoscode Logo"}
                         alignSelf={"center"}
@@ -43,11 +43,7 @@ const Signup = () => {
                 justifyContent={"center"}
                 bgGradient={{sm: 'linear(to-r, blue.600, purple.600)'}}
             >
-                <Text fontSize={"6xl"} color={'white'} fontWeight={"bold"} mb={5}>
-                    <Link target={"_blank"} href={"https://amigoscode.com/courses"}>
-                        Enrol Now
-                    </Link>
-                </Text>
+
                 <Image
                     alt={'Login Image'}
                     objectFit={'scale-down'}
