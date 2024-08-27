@@ -86,7 +86,7 @@ const SidebarContent = ({onClose, ...rest}) => {
                     borderRadius='full'
                     boxSize='75px'
                     src='https://static.vecteezy.com/system/resources/previews/021/340/782/non_2x/customer-icon-for-your-website-design-logo-app-ui-free-vector.jpg'
-                    alt='Amigoscode'
+                    alt='CustomerHub'
                 />
                 <CloseButton display={{base: 'flex', md: 'none'}} onClick={onClose}/>
             </Flex>

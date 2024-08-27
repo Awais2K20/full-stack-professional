@@ -21,7 +21,7 @@ const Signup = () => {
                     <Image
                         src={"https://static.vecteezy.com/system/resources/previews/021/340/782/non_2x/customer-icon-for-your-website-design-logo-app-ui-free-vector.jpg"}
                         boxSize={"200px"}
-                        alt={"Amigoscode Logo"}
+                        alt={"CustomerHub Logo"}
                         alignSelf={"center"}
                     />
                     <Heading fontSize={'2xl'} mb={15}>Register for an account</Heading>
